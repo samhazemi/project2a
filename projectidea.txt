@@ -1,0 +1,35 @@
+1-create a dashboard to show bnb listings  in chicago with price, availability and crime for the bnb community and ...
+to get the data we can use 
+https://data.cityofchicago.org/Public-Safety/Crimes-2018
+http://insideairbnb.com/chicago/
+
+
+2- clean the data
+
+3-create the db
+
+4- create the flask with secitions for index,room types, price, crime 
+
+5-Use plotly to build interactive charts for our dashboard (PIE chart, Bubble vhart,...)
+
+6-use d3 and leaflet to look at the data
+
+The Dashboard will have drop down of the neighborhoods and will have a pie chart for ??? and a meter chart for ?? bubble chart for crime and then two charts for 
+de leaflet 
+List of neighborhood names;
+
+List of airbnb neighborhood crime count;
+     
+List of airbnb neighborhood crime rate.;
+     
+List of crime Incidents counts and crime rate in each neighborhood;
+
+Entire_home information for a given neighbourhood;
+
+Private_room information for a given neighbourhood;
+    
+Shared_room information for a given neighbourhood;
+     
+List of average price and review counts in each room_type in each neighborhood.
+
+List of each Airbnb Id’s price, host-id, review, availability etc. in each neighborhood. 

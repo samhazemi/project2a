@@ -1,0 +1,47 @@
+neighbourhood,room_type_x,P_price,number_of_reviews_x,reviews_per_month_x,availability_365_x,room_type_y,E_price,number_of_reviews_y,reviews_per_month_y,availability_365_y,neighirhood_cluster,number_of_crimes,room_type,S_price,number_of_reviews,reviews_per_month,availability_365,number_of_crimes,crime rate
+"Brightwood Park, Crestwood, Petworth",Private room,88.49315068,16.81506849,1.264589041,149.9315068,Entire home/apt,272.6863636,19.77272727,1.515227273,148.0318182,Cluster 18,1411,Shared room,72,3.8,0.256,266.6,1411,4.314456947
+"Brookland, Brentwood, Langdon",Private room,90.52,13,1.145,146.5,Entire home/apt,187.3333333,24.86419753,1.831975309,168.4074074,Cluster 22,1244,Shared room,93.5,11,0.6,364.5,1244,3.803816047
+"Capitol Hill, Lincoln Park",Private room,141.8130081,34.45528455,2.030813008,127.9268293,Entire home/apt,378.4177215,23.98372514,1.640036166,137.6220615,Cluster 26,1461,Shared room,213.7142857,6.285714286,0.837142857,100.7142857,1461,4.467343444
+"Capitol View, Marshall Heights, Benning Heights",Private room,114.1351351,13.02702703,1.135135135,224.9189189,Entire home/apt,147,14.85714286,1.565714286,184.2142857,Cluster 33,923,Shared room,15,5.5,0.928333333,358.8333333,923,2.822284736
+"Cathedral Heights, McLean Gardens, Glover Park",Private room,118.7297297,19.32432432,0.930540541,125.6756757,Entire home/apt,284.3168317,7.178217822,0.804455446,107.8613861,Cluster 14,235,Shared room,35.875,0.625,0.2025,32.5,235,0.718566536
+"Cleveland Park, Woodley Park, Massachusetts Avenue Heights, Woodland-Normanstone Terrace",Private room,133,16.3125,1.5075,118,Entire home/apt,304.0113636,16.32954545,1.18875,134.6022727,Cluster 15,328,Shared room,55,14.5,1.695,57.5,328,1.002935421
+"Colonial Village, Shepherd Park, North Portal Estates",Private room,108.9333333,9.4,0.54,274.2,Entire home/apt,421.0588235,5.235294118,1.151176471,106.3529412,Cluster 16,150,,,,,,150,0.458659491
+"Columbia Heights, Mt. Pleasant, Pleasant Plains, Park View",Private room,91.65612648,20.26086957,1.311818182,127.4664032,Entire home/apt,241.1840607,18.18595825,1.378045541,130.5673624,Cluster 2,2654,Shared room,43.18181818,14.27272727,1.851363636,152.0909091,2654,8.115215264
+"Congress Heights, Bellevue, Washington Highlands",Private room,88.7,10.3,0.966,169.4,Entire home/apt,280.9565217,17.82608696,1.477391304,100.3913043,Cluster 39,1284,Shared room,60,0,0,78.5,1284,3.926125245
+"Deanwood, Burrville, Grant Park, Lincoln Heights, Fairmont Heights",Private room,92.5,5.333333333,1.676666667,147.0833333,Entire home/apt,259.5,13.33333333,2.751666667,143,Cluster 31,950,Shared room,38.66666667,0,0,72.66666667,950,2.904843444
+"Douglas, Shipley Terrace",Private room,135.5625,36.0625,1.529375,255.4375,Entire home/apt,438.75,1.5,0.28,219,Cluster 38,568,,,,,,568,1.736790607
+"Downtown, Chinatown, Penn Quarters, Mount Vernon Square, North Capitol Street",Private room,150.3278689,28.27868852,1.906393443,85.06557377,Entire home/apt,383.8295165,13.01017812,0.903358779,179.5292621,Cluster 8,2307,Shared room,52.33333333,6.666666667,0.93,12,2307,7.054182975
+"Dupont Circle, Connecticut Avenue/K Street",Private room,145.6101695,15.1440678,1.177881356,128.4067797,Entire home/apt,276.5771028,25.10514019,1.434719626,124.3037383,Cluster 6,1605,Shared room,95.18181818,21.36363636,1.912727273,134.6363636,1605,4.907656556
+"Eastland Gardens, Kenilworth",Private room,50.375,83.375,3.26375,144,Entire home/apt,205,8,0.97,36,Cluster 29,77,,,,,,77,0.235445205
+"Edgewood, Bloomingdale, Truxton Circle, Eckington",Private room,106.6682243,28.1682243,1.823271028,155.5233645,Entire home/apt,266.6933333,26.6,2.095366667,130.9466667,Cluster 21,1103,Shared room,57.81818182,21.27272727,2.398181818,131.8636364,1103,3.372676125
+"Fairfax Village, Naylor Gardens, Hillcrest, Summit Park",Private room,76.6,6.6,0.637,203.4,Entire home/apt,246.375,3.125,0.31375,159.5,Cluster 35,377,,,,,,377,1.152764188
+"Friendship Heights, American University Park, Tenleytown",Private room,230.1071429,24.82142857,1.506785714,134.25,Entire home/apt,222.7209302,15.88372093,1.033023256,156.4651163,Cluster 11,508,,,,,,508,1.55332681
+"Georgetown, Burleith/Hillandale",Private room,131.890625,11.71875,1.26078125,158.4375,Entire home/apt,328.0764331,20.08917197,1.505031847,158.5859873,Cluster 4,1064,Shared room,35,2.5,1.775,215.5,1064,3.253424658
+"Hawthorne, Barnaby Woods, Chevy Chase",Private room,74.88888889,23.88888889,1.481666667,252.3888889,Entire home/apt,315.125,10.78125,0.66125,150.21875,Cluster 10,256,Shared room,35,11,5.16,32,256,0.782778865
+Historic Anacostia,Private room,66.69047619,29.16666667,1.835,206.952381,Entire home/apt,202.8333333,7.166666667,1.133333333,118.8333333,Cluster 28,378,,,,,,378,1.155821918
+"Howard University, Le Droit Park, Cardozo/Shaw",Private room,125.0792079,20.83168317,1.693366337,129.4356436,Entire home/apt,325.0491803,16.33606557,1.5175,139.0860656,Cluster 3,1459,Shared room,76.8,11,0.518,196.8,1459,4.461227984
+"Ivy City, Arboretum, Trinidad, Carver Langston",Private room,99.33333333,21.79487179,2.079358974,136.7820513,Entire home/apt,265.3655914,16.94623656,1.683225806,123.9247312,Cluster 23,1403,Shared room,56.66666667,2,0.136666667,89.66666667,1403,4.289995108
+"Kalorama Heights, Adams Morgan, Lanier Heights",Private room,102.7710843,15.59036145,0.945783133,134.5060241,Entire home/apt,258.9573171,14.45426829,1.159664634,120.3628049,Cluster 1,713,Shared room,51.79166667,30,1.732083333,161.5833333,713,2.180161448
+"Lamont Riggs, Queens Chapel, Fort Totten, Pleasant Hill",Private room,82.33333333,7.303030303,1.295757576,154.2424242,Entire home/apt,321.0294118,11.47058824,1.177352941,101.7941176,Cluster 19,525,,,,,,525,1.605308219
+"Mayfair, Hillbrook, Mahaning Heights",Private room,59.60869565,6.913043478,1.009130435,149.3043478,Entire home/apt,248.3846154,13.61538462,1.137692308,189.7692308,Cluster 30,548,Shared room,45,0,0,364,548,1.675636008
+"Near Southeast, Navy Yard",Private room,134.3571429,11.35714286,1.204285714,102.7857143,Entire home/apt,349.372093,5.23255814,0.606511628,118.5116279,Cluster 27,292,,,,,,292,0.892857143
+"North Cleveland Park, Forest Hills, Van Ness",Private room,157.125,9,0.529583333,102.75,Entire home/apt,273.5319149,6.617021277,0.717659574,102.2978723,Cluster 12,180,Shared room,42.66666667,17,0.896666667,201.6666667,180,0.550391389
+"North Michigan Park, Michigan Park, University Heights",Private room,105.7234043,17.55319149,1.340425532,170.787234,Entire home/apt,160.2926829,17.73170732,2.159756098,143.4390244,Cluster 20,355,Shared room,35.66666667,10.33333333,1.296666667,244.6666667,355,1.085494129
+"River Terrace, Benning, Greenway, Dupont Park",Private room,70.92857143,26.07142857,1.541428571,241.5714286,Entire home/apt,274.3333333,12.33333333,0.820833333,227.8333333,Cluster 32,828,Shared room,49,4,0.46,365,828,2.531800391
+"Shaw, Logan Circle",Private room,121.3257576,25.91666667,1.870833333,131.9393939,Entire home/apt,329.4376658,24.22811671,1.67397878,132.1803714,Cluster 7,1169,Shared room,43.76190476,19.28571429,1.346190476,223.047619,1169,3.574486301
+"Sheridan, Barry Farm, Buena Vista",Private room,83.86666667,9.133333333,1.294,190.0666667,Entire home/apt,422.2222222,13.22222222,0.752222222,235.6666667,Cluster 37,406,Shared room,95,0,0,365,406,1.241438356
+"Southwest Employment Area, Southwest/Waterfront, Fort McNair, Buzzard Point",Private room,131.3137255,25.2745098,1.879803922,170.6666667,Entire home/apt,400.7719298,11.10526316,1.001491228,126.0175439,Cluster 9,688,Shared room,80,7,1.106666667,254,688,2.1037182
+"Spring Valley, Palisades, Wesley Heights, Foxhall Crescent, Foxhall Village, Georgetown Reservoir",Private room,110.2857143,10.39285714,0.488571429,123.1071429,Entire home/apt,538.9538462,10.32307692,0.679692308,138.8153846,Cluster 13,197,,,,,,197,0.602372798
+"Takoma, Brightwood, Manor Park",Private room,76.4,15.075,0.91775,199.25,Entire home/apt,180.6166667,16.7,1.234333333,158.0166667,Cluster 17,891,Shared room,28,1,1,357,891,2.724437378
+"Twining, Fairlawn, Randle Highlands, Penn Branch, Fort Davis Park, Fort Dupont",Private room,165,13.6,1.2635,199,Entire home/apt,249.7647059,20.35294118,1.604705882,231.6764706,Cluster 34,814,Shared room,32.85714286,20.5,1.297857143,346.9285714,814,2.488992172
+"Union Station, Stanton Park, Kingman Park",Private room,128.0052632,23.75263158,1.983842105,117.0631579,Entire home/apt,384.4369449,21.5079929,1.66277087,126.2753108,Cluster 25,1918,Shared room,677.6666667,5.777777778,0.784444444,81,1918,5.864726027
+"West End, Foggy Bottom, GWU",Private room,148.4347826,13.13043478,1.034347826,128.6521739,Entire home/apt,210.0189573,18.507109,1.442938389,169.4028436,Cluster 5,547,Shared room,78.33333333,27.8,1.558666667,138.1333333,547,1.672578278
+"Woodland/Fort Stanton, Garfield Heights, Knox Hill",Private room,120.6,18.8,5.608,95.2,Entire home/apt,483.3333333,10.66666667,1.53,337.6666667,Cluster 36,299,,,,,,299,0.914261252
+"Woodridge, Fort Lincoln, Gateway",Private room,74.82758621,14.24137931,1.482758621,202.8965517,Entire home/apt,264.3103448,17.06896552,1.332068966,158.2758621,Cluster 24,589,,,,,,589,1.801002935
+Walter Reed,,,,,,,,,,,Cluster 40,,,,,,,,
+Rock Creek Park,,,,,,,,,,,Cluster 41,,,,,,,,
+Observatory Circle,,,,,,,,,,,Cluster 42,,,,,,,,
+Saint Elizabeths,,,,,,,,,,,Cluster 43,,,,,,,,
+Joint Base Anacostia-Bolling,,,,,,,,,,,Cluster 44,,,,,,,,
+"Arboretum, Anacostia River",,,,,,,,,,,Cluster 46,,,,,,,,
+"National Mall, Potomac River",,,,,,,,,,,Cluster 45,,,,,,,,
