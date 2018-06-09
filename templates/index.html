@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../static/style.css">
     <link rel="shortcut icon" href="">
 
-    <!-- MAP CODE -->
+    <!-- MAP JS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -75,7 +75,8 @@
             </div>
         </div>
         <div class = "row"></div>
-
+        
+        <!-- Div for paddding -->
         <div class="col-md-12" style="padding-bottom:20px;">
         </div>
 
@@ -86,9 +87,13 @@
                 </div>
             </div>     
         </div>
+        
+        <!-- Div for paddding -->
+        <div class="col-md-12" style="padding-bottom:20px;">
+        </div>
 
         <div class="row">
-            <div class="col-md-12 jumbotron text-center">
+            <div id="jumbot" class="col-md-12 jumbotron text-center">
                 <h2><strong>Airbnb Listing vs Number of Crimes in CHICAGO Neighborhood</strong></h2>
                     
             </div>
@@ -118,13 +123,12 @@
 
     <script>
 
-        
         function updateEntireData(entireData) {
-            
+            // Reference to Panel element for entireData
             var PANEL = document.getElementById("entire");
-           
+            // Clear any existing metadata
             PANEL.innerHTML = '';
-           
+            // Loop through keys in the json response + add tags             
             for(var key in entireData[0]) {
                 h6tag = document.createElement("h6");
                 int_val = Number(entireData[0][key]).toFixed(0)
@@ -136,11 +140,10 @@
         }
 
         function updatePrivateData(privateData) {
-           
+            // Reference to Panel element for privateData
             var PANEL = document.getElementById("private");
-            
             PANEL.innerHTML = '';
-            
+            // Loop through keys in the json response + add tags  
             for(var key in privateData[0]) {
                 h6tag = document.createElement("h6");
                 int_val = Number(privateData[0][key]).toFixed(0)
@@ -152,12 +155,10 @@
         }
 
         function updateSharedData(sharedData) {
-           
+            // Reference to Panel element for sharedData
             var PANEL = document.getElementById("shared");
-            
             PANEL.innerHTML = '';
-            
-           
+            // Loop through keys in the json response + add tags  
             for(var key in sharedData[0]) {
                 h6tag = document.createElement("h6");
                 int_val = Number(sharedData[0][key]).toFixed(0)
@@ -171,19 +172,17 @@
 
         function buildCharts(listingData) {
 
-            
+            // Loop through listprice data and find the Airbnb list host information
+            // Build Bubble Chart
             var bubbleLayout = {
                 margin: {  
                     t: 50,
-                
                 },
-                
                 hovermode: 'closest',
                 title: '<b>Airbnb Rental Price per Airbnb ID<b>',
                 xaxis: { title: 'Airbnb ID' },
                 yaxis: {title: "Log Airbnb Rental Price ($)", type: 'log', autorange: true},
-                
-                width: 1490,
+                width: 1670,
             };
 
 
@@ -202,7 +201,7 @@
             var BUBBLE = document.getElementById('bubble');
             Plotly.plot(BUBBLE, bubbleData, bubbleLayout);
 
-           
+            // Build Pie Chart
             var pieData = [{
                 values: listingData[0]['price'].slice(0, 10),
                 labels: listingData[0]['airbnb_ids'].slice(0, 10),
@@ -220,9 +219,7 @@
                     b: 40,
                     l: 10
                  },
-               
                 title: '<b>Top 10 Airbnb Rental Price by Airbnb ID in Each Neighborhood</b>',
-                
             };
 
             var PIE = document.getElementById('pie');
@@ -235,10 +232,7 @@
             var airbnb_id = sampleData[0]['airbnb_ids'];
             var labels = listingData[0]['room_type'];
 
-            
-    
-
-           
+            // Update the Bubble Chart with the new data
             var BUBBLE = document.getElementById('bubble');
             Plotly.restyle(BUBBLE, 'x', [airbnb_id]);
             Plotly.restyle(BUBBLE, 'y', [price]);
@@ -246,7 +240,8 @@
             Plotly.restyle(BUBBLE, 'marker.size', [price ]);
             Plotly.restyle(BUBBLE, 'marker.color', [airbnb_id]);
 
-           
+            // Update the Pie Chart with the new data
+            // Use slice to select only the top 10 listing price for the pie chart
             var PIE = document.getElementById('pie');
             var pieUpdate = {
                 values: [price.slice(0, 10)],
@@ -260,14 +255,13 @@
 
 
         function getData(neighbourhood) {
-            
+            // Use a request to grab the json data needed for all charts
             Plotly.d3.json(`/listprice/${neighbourhood}`, function(error, listingData) {
                 if (error) return console.warn(error);
 
                 buildCharts(listingData);
                 
             });
-
 
             Plotly.d3.json(`/entirehome/${neighbourhood}`, function(error, entireData) {
                 if (error) return console.warn(error);
@@ -295,16 +289,17 @@
 
         }
         
+        // Create global variable for map
         var myMap_global = null
         
         function getOptions() {
 
-            
+            // Grab a reference to the dropdown select element
             var selector = document.getElementById('selDataset');
             if(myMap_global != null){
                 myMap_global.remove();
             }
-           
+            // Use the list of neighbourhood names to populate the select options
             Plotly.d3.json('/names', function(error, neighbourhoodNames) {
                 for (var i = 0; i < neighbourhoodNames.length;  i++) {
                     var currentOption = document.createElement('option');
@@ -317,16 +312,6 @@
 
             
             var mapbox = 'https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGhvbmFnYW4taCIsImEiOiJjamhiN3ZoMDkwbWVtMzZzMDFxMm9iam13In0.ixvQvlhiz3Ov_WvURTDVMA'
-            
-            d3.csv("static/js/bnb_listings.csv",function(data){
-                
-                for(i = 0; i<data.length; i++){
-                    if(data[i].neighbourhood == neighbourhoodNames)    
-                    {
-                        L.marker([data[i].latitude, data[i].longitude]).addTo(myMap).remove();
-                    }
-                }
-            });
 
             myMap = L.map('map', {
             center: [41.839832, -87.623177],
@@ -348,16 +333,16 @@
                 heatArray.push([location.latitude, location.longitude])
                 }
             }
-
-            d3.csv("static/js/bnb_listings.csv",function(data){
-                
-                for(i = 0; i<data.length; i++){
-                    if(data[i].neighbourhood == neighbourhoodNames)    
-                    {
-                        L.marker([data[i].latitude, data[i].longitude]).addTo(myMap);
-                    }
-                }
-            });
+            
+            // Add layer with markers
+            // d3.csv("static/js/bnb_listings.csv",function(data){
+            //     for(i = 0; i<2500; i++){
+            //         // if(data[i].neighbourhood == neighbourhoodNames)    
+            //         // {
+            //             L.marker([data[i].latitude, data[i].longitude]).addTo(myMap);
+            //         // }
+            //     }
+            // });
 
             var heat = L.heatLayer(heatArray, {
                 radius: 20,
@@ -367,28 +352,15 @@
             });
             myMap_global = myMap;  
             });         
-            
-        
         }
         
         function optionChanged(newneighbourhoodname) {
-            
+            // Fetch new data each time a new neighbourhood names is selected
             if(myMap_global != null){
                 myMap_global.remove();
             }
             getData(newneighbourhoodname, updateCharts);
-           
             var mapbox = 'https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGhvbmFnYW4taCIsImEiOiJjamhiN3ZoMDkwbWVtMzZzMDFxMm9iam13In0.ixvQvlhiz3Ov_WvURTDVMA'
-            
-            d3.csv("static/js/bnb_listings.csv",function(data){
-                
-                for(i = 0; i<data.length; i++){
-                    if(data[i].neighbourhood == newneighbourhoodname)    
-                    {
-                        L.marker([data[i].latitude, data[i].longitude]).addTo(myMap).remove();
-                    }
-                }
-            });
 
             var myMap = L.map('map', {
             center: [41.839832, -87.623177],
@@ -399,11 +371,7 @@
             L.geoJSON(geo_data).addTo(myMap);
             var url = "https://data.cityofchicago.org/resource/crimes.json?$limit=10000"
 
-            
-
             d3.json(url, function(response){
-
-            
 
             var heatArray = [];
 
@@ -416,14 +384,31 @@
             }
 
             d3.csv("static/js/bnb_listings.csv",function(data){
-                
                 for(i = 0; i<data.length; i++){
                     if(data[i].neighbourhood == newneighbourhoodname)    
                     {
-                        L.marker([data[i].latitude, data[i].longitude]).addTo(myMap);
+                        if(data[i].room_type == "Private room"){
+                            var blackIcon = new L.Icon({
+                            iconUrl: './static/img/marker-icon-black.png',
+                        });
+                            L.marker([data[i].latitude, data[i].longitude],{icon:blackIcon}).bindTooltip(data[i].room_type+'(Price:$'+data[i].price+')').addTo(myMap);    
+                        }
+                        else if(data[i].room_type == "Entire home/apt"){
+                            var redIcon = new L.Icon({
+                            iconUrl: './static/img/marker-icon-red.png',
+                        });
+                            L.marker([data[i].latitude, data[i].longitude],{icon:redIcon}).bindTooltip(data[i].room_type+'(Price:$'+data[i].price+')').addTo(myMap);    
+                        }
+                        else{
+                            var blueIcon = new L.Icon({
+                            iconUrl: './static/img/marker-icon-blue.png',
+                        });
+                            L.marker([data[i].latitude, data[i].longitude],{icon:blueIcon}).bindTooltip(data[i].room_type+'(Price:$'+data[i].price+')').addTo(myMap);    
+                        }
                     }
                 }
             });
+            
 
             var heat = L.heatLayer(heatArray, {
                 radius: 20,
@@ -439,7 +424,7 @@
             
         }
 
-        
+        // Initialize the dashboard
         init();
 
         
@@ -448,17 +433,17 @@
 
             Plotly.d3.json(`/crimerate/${neighbourhood}`, function(error, crimerateData) {
                 if (error) return console.warn(error);
-                
+                // Enter the washing frequency between 0 and 180
                 var level = crimerateData*20;
 
-                
+                // Trig to calc meter point
                 var degrees = 180 - level,
                     radius = .5;
                 var radians = degrees * Math.PI / 180;
                 var x = radius * Math.cos(radians);
                 var y = radius * Math.sin(radians);
 
-                
+                // Path: may have to change to create a better triangle
                 var mainPath = 'M -.0 -0.05 L .0 0.05 L ',
                     pathX = String(x),
                     space = ' ',
@@ -502,7 +487,8 @@
                     }
                     }],
                 title: '<b>Crime Rate per Neighborhood  </b> <br> Chicago 2017/2018 ',
-                
+                // height: 380,
+                // width: 500,
                 xaxis: {zeroline:false, showticklabels:false,
                             showgrid: false, range: [-1, 1]},
                 yaxis: {zeroline:false, showticklabels:false,
@@ -519,7 +505,7 @@
             Plotly.d3.json(`/correlation`, function(error, correlationData) {
                 if (error) return console.warn(error);
                 correlationData = correlationData[0]
-                 
+                 // Create the Traces
                 var trace1 = {
                     x: correlationData.number_of_crimes,
                     y: correlationData.airbnb_counts_per_neighbourhood,
@@ -532,23 +518,19 @@
                     }
                 };
 
-
-               
+                // Create the data array 
                 var data = [trace1];
 
-                
+                // Define the plot layout
                 var layout = {
                     title: "Airbnb listing Rental Amount vs Crime Counts in each Neighborhood",
                     xaxis: { title: "Crime Counts" },
                     yaxis: { title: "Airbnb listing Rental Amount" }
                 };
 
-                
+                // Plot the chart to a div tag with id "plot"
                 var Scatter1 = document.getElementById('scatter1');
                 Plotly.newPlot("scatter1", data, layout);
-
-
-
             })
         }
 
@@ -557,8 +539,7 @@
             Plotly.d3.json(`/correlation`, function(error, correlationData) {
                 if (error) return console.warn(error);
                 correlationData = correlationData[0]
-                 
-                
+                 // Create the Traces
                 var trace2 = {
                     x: correlationData.number_of_crimes,
                     y: correlationData.total_reviews_per_neighbourhood,
@@ -571,22 +552,19 @@
                     }
                 };
 
-               
+                // Create the data array
                 var data = [trace2];
 
-                
+                // Define the plot layout
                 var layout = {
                     title: "Airbnb listing Total Review vs Crime Counts in each Neighborhood",
                     xaxis: { title: "Crime Counts" },
                     yaxis: { title: "Airbnb listing Total Review" }
                 };
 
-                
+                // Plot the chart to a div tag with id "plot"
                 var Scatter2 = document.getElementById('scatter2');
                 Plotly.newPlot("scatter2", data, layout);
-
-
-
             })
         }
     </script>
