@@ -172,8 +172,7 @@
 
         function buildCharts(listingData) {
 
-            // Loop through listprice data and find the Airbnb list host information
-            // Build Bubble Chart
+            
             var bubbleLayout = {
                 margin: {  
                     t: 50,
@@ -496,13 +495,13 @@
             Plotly.d3.json(`/correlation`, function(error, correlationData) {
                 if (error) return console.warn(error);
                 correlationData = correlationData[0]
-                 // Create the Traces
+                 
                 var trace1 = {
                     x: correlationData.number_of_crimes,
                     y: correlationData.airbnb_counts_per_neighbourhood,
                     mode: "markers",
                     type: "scatter",
-                    name: "Airbnb rental amount",
+                    name: "BNB rental amount",
                     marker: {
                     color: "#2077b4",
                     symbol: "hexagram"
@@ -519,7 +518,7 @@
                     yaxis: { title: "BNB listing Rental Amount" }
                 };
 
-                // Plot the chart to a div tag with id "plot"
+                
                 var Scatter1 = document.getElementById('scatter1');
                 Plotly.newPlot("scatter1", data, layout);
             })
@@ -536,24 +535,24 @@
                     y: correlationData.total_reviews_per_neighbourhood,
                     mode: "markers",
                     type: "scatter",
-                    name: "Airbnb Rental Total Reviews",
+                    name: "BNB Rental Total Reviews",
                     marker: {
                     color: "orange",
                     symbol: "diamond-x"
                     }
                 };
 
-                // Create the data array
+                
                 var data = [trace2];
 
-                // Define the plot layout
+                
                 var layout = {
-                    title: "Airbnb listing Total Review vs Crime Counts in each Neighborhood",
+                    title: "BNB listing Total Review vs Crime Counts in each Neighborhood",
                     xaxis: { title: "Crime Counts" },
-                    yaxis: { title: "Airbnb listing Total Review" }
+                    yaxis: { title: "BNB listing Total Review" }
                 };
 
-                // Plot the chart to a div tag with id "plot"
+                
                 var Scatter2 = document.getElementById('scatter2');
                 Plotly.newPlot("scatter2", data, layout);
             })
